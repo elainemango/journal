@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+
+<p><%= homeContent %></p>
+
+
+<!------- loop through posts array on app.js to create new posts------->
+<% posts.forEach(function(post) { %>
+    <div>
+        <h2><%= post.title %></h2>
+        <p><%= post.content.substring(0, 70) %> ...     <!-- substring() method to truncate string -->
+        <a href="/post/<%= post.title.toLowerCase() %>">Read more</a>
+        </p>
+    </div>
+<% }) %>
+
+
+<%- include("partials/footer"); -%>
+
+
+
